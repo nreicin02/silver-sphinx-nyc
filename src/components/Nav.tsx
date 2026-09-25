@@ -23,8 +23,8 @@ export function Nav() {
       <div className="mx-auto max-w-[1400px] px-4 md:grid md:h-[72px] md:grid-cols-[1fr_auto_1fr] md:items-center md:px-8">
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">{links}</nav>
         <div className="flex h-14 items-center justify-center md:h-auto">
-          <Link href="/" className="wordmark text-[28px] leading-none md:text-[32px]" aria-label="The Silver Prince of New York, home">
-            Silver Prince
+          <Link href="/" className="wordmark text-[28px] leading-none md:text-[32px]" aria-label="The Silver Sphinx of New York, home">
+            Silver Sphinx
           </Link>
         </div>
         <div className="flex items-center justify-end">

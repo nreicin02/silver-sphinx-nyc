@@ -25,7 +25,7 @@ export default function Home() {
       <section className="mx-auto grid max-w-[1400px] items-center gap-8 px-4 pb-16 pt-6 md:min-h-[calc(100dvh-72px)] md:grid-cols-[5fr_7fr] md:gap-12 md:px-8 md:pb-24 md:pt-10">
         <div className="order-2 md:order-1">
           <h1 className="wordmark text-[56px] leading-[0.92] sm:text-7xl md:text-[64px] lg:text-[88px] xl:text-[104px]">
-            The Silver<br />Prince<br />of New York
+            The Silver<br />Sphinx<br />of New York
           </h1>
           <p className="mt-6 max-w-sm text-base text-muted md:text-lg">
             Sterling silver, hand selected in the city. Cuffs, chains, pendants and pins with weight to them.
@@ -72,7 +72,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="max-w-sm text-base text-muted md:text-lg">
-                Every piece is sterling checked by hand before it goes out. Ask the Prince for this piece&apos;s story.
+                Every piece is sterling checked by hand before it goes out. Ask the Sphinx for this piece&apos;s story.
               </p>
               <Link href="/about" className="label link-line mt-6 inline-flex items-center gap-2">
                 About the house <ArrowRight size={14} />
@@ -110,7 +110,7 @@ export default function Home() {
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex shrink-0">
               {Array.from({ length: 6 }).map((_, i) => (
-                <span key={i} className="wordmark px-8 text-5xl md:text-7xl">The Silver Prince of New York</span>
+                <span key={i} className="wordmark px-8 text-5xl md:text-7xl">The Silver Sphinx of New York</span>
               ))}
             </div>
           ))}

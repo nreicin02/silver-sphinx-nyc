@@ -12,9 +12,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_URL ? `h
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "The Silver Prince of New York", template: "%s | The Silver Prince of New York" },
+  title: { default: "The Silver Sphinx of New York", template: "%s | The Silver Sphinx of New York" },
   description: "Sterling silver jewelry, hand selected in New York. Cuffs, chains, pendants, rings and brooches. Text to ask about any piece.",
-  openGraph: { title: "The Silver Prince of New York", description: "Sterling silver jewelry, hand selected in New York.", type: "website" },
+  openGraph: { title: "The Silver Sphinx of New York", description: "Sterling silver jewelry, hand selected in New York.", type: "website" },
 };
 
 export const viewport: Viewport = { themeColor: [{ media: "(prefers-color-scheme: light)", color: "#f5f5f3" }, { media: "(prefers-color-scheme: dark)", color: "#131313" }] };

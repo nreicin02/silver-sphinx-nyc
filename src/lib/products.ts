@@ -1,4 +1,4 @@
-// Product catalog for The Silver Prince of New York.
+// Product catalog for The Silver Sphinx of New York.
 // No prices on the site: every piece is negotiated over text or a call.
 // `images` are paths under /public/products, generated from the cleaned photos.
 

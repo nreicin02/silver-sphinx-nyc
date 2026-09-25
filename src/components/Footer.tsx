@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-line">
       <div className="mx-auto grid max-w-[1400px] gap-10 px-4 py-12 md:grid-cols-[1fr_auto_1fr] md:items-end md:px-8">
         <div>
-          <p className="wordmark text-4xl">Silver Prince</p>
+          <p className="wordmark text-4xl">Silver Sphinx</p>
           <p className="mt-3 max-w-xs text-sm text-muted">Sterling silver, hand selected in New York.</p>
         </div>
         <nav className="grid grid-cols-2 gap-x-12 gap-y-3 md:justify-self-center" aria-label="Footer">
@@ -24,7 +24,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-line">
-        <p className="label mx-auto max-w-[1400px] px-4 py-4 text-muted md:px-8">&copy; {new Date().getFullYear()} The Silver Prince of New York. All rights reserved.</p>
+        <p className="label mx-auto max-w-[1400px] px-4 py-4 text-muted md:px-8">&copy; {new Date().getFullYear()} The Silver Sphinx of New York. All rights reserved.</p>
       </div>
     </footer>
   );
