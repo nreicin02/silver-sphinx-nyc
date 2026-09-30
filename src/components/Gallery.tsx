@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
 
 export function Gallery({ images, name }: { images: string[]; name: string }) {
   const [i, setI] = useState(0);
-  const reduce = useReducedMotion();
   return (
     <div className={images.length > 1 ? "grid gap-3 md:grid-cols-[72px_minmax(0,1fr)] md:gap-4" : "grid"}>
       {images.length > 1 && (
@@ -25,15 +23,9 @@ export function Gallery({ images, name }: { images: string[]; name: string }) {
         </div>
       )}
       <div className="plate relative order-1 aspect-square w-full overflow-hidden md:order-2">
-        <motion.div
-          key={images[i]}
-          className="absolute inset-0"
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        >
+        <div key={images[i]} className="fade-in absolute inset-0">
           <Image src={images[i]} alt={`${name}, view ${i + 1}`} fill priority sizes="(min-width: 768px) 55vw, 100vw" className="object-cover" />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

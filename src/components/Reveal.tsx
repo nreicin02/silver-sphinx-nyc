@@ -1,18 +1,11 @@
-"use client";
-import { motion, useReducedMotion } from "motion/react";
+import type { CSSProperties } from "react";
 
-// Enter-on-scroll wrapper. Communicates sequence: sections arrive as you reach them.
-export function Reveal({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const reduce = useReducedMotion();
+// Enter-on-scroll, done in CSS (see .reveal in globals.css). Visible by default: no JavaScript is needed,
+// and browsers without scroll-driven animations simply show the content.
+export function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   return (
-    <motion.div
-      className={className}
-      initial={reduce ? false : { opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
+    <div className={`reveal ${className}`} style={{ "--d": delay } as CSSProperties}>
       {children}
-    </motion.div>
+    </div>
   );
 }

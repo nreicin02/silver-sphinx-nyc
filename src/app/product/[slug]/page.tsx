@@ -32,7 +32,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
         <div className="md:col-span-5 md:sticky md:top-28 md:self-start">
           <Link href={`/shop?c=${p.category}`} className="label link-line text-muted">{catLabel}</Link>
-          <h1 className="mt-3 text-3xl font-medium tracking-tight md:text-5xl">{p.name}</h1>
+          <h1 className="mt-3 text-3xl display md:text-5xl">{p.name}</h1>
           <p className="mt-3 text-muted">Price on request</p>
           <p className="mt-6 max-w-md">{p.short}</p>
           <InquireButtons pieceName={p.name} />
@@ -45,7 +45,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {related.length > 0 && (
         <section className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
-          <h2 className="border-b border-line pb-5 text-2xl font-medium tracking-tight md:text-4xl">More {catLabel.toLowerCase()}</h2>
+          <h2 className="border-b border-line pb-5 text-2xl display md:text-4xl">More {catLabel.toLowerCase()}</h2>
           <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-8">
             {related.map((r) => <ProductCard key={r.slug} product={r} />)}
           </div>

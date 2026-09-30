@@ -1,24 +1,16 @@
 @import "tailwindcss";
 
-/* Design tokens. One palette: off-white canvas, off-black ink, silver as the single accent. Radius is 0 everywhere. */
+/* Theme: ethereal night sky. One mode only, built around the logo's icy silver-blue glow.
+   One accent (icy blue), one neutral family (blue-tinted greys), radius 0 everywhere. */
 :root {
-  --bg: #f5f5f3;
-  --bg-2: #ebebe8;
-  --fg: #141414;
-  --muted: #6b6b68;
-  --line: #d8d8d4;
-  --silver: #b9b9b5;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #131313;
-    --bg-2: #1c1c1c;
-    --fg: #ececea;
-    --muted: #9a9a96;
-    --line: #2c2c2c;
-    --silver: #8d8d89;
-  }
+  color-scheme: dark;
+  --bg: #05070c;
+  --bg-2: #0a0f1a;
+  --fg: #e8ecf2;
+  --muted: #8e97a6;
+  --line: rgba(188, 212, 255, 0.14);
+  --accent: #bcd4ff;
+  --glow: rgba(140, 180, 255, 0.16);
 }
 
 @theme inline {
@@ -27,82 +19,123 @@
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-line: var(--line);
-  --color-silver: var(--silver);
-  --font-sans: var(--font-archivo);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-jost);
   --font-display: var(--font-pirata);
-  --radius: 0px;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--bg); }
 
+/* No background on body: the sky sits at z-index -1 and a body background would paint over it. */
 body {
-  background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* The house label style: small, uppercase, wide tracking. Used for nav, prices, and buttons, not as eyebrows over every heading. */
-.label {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
+::selection { background: rgba(188, 212, 255, 0.28); color: var(--fg); }
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
 
-.wordmark {
-  font-family: var(--font-display), serif;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1;
-}
+/* Type: Pirata One for the name, Jost light for headings, Jost for everything else. */
+.wordmark { font-family: var(--font-display), serif; font-weight: 400; letter-spacing: 0.02em; line-height: 1; }
+.label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; }
+.display { font-weight: 300; letter-spacing: -0.015em; line-height: 1.05; }
 
-.link-line {
-  position: relative;
-}
+.link-line { position: relative; }
 .link-line::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: -3px;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s var(--ease-out-expo);
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: right;
+  transition: transform 0.5s var(--ease-out-expo);
 }
-.link-line:hover::after, .link-line[aria-current="page"]::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
+.link-line:hover::after, .link-line[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
 
+/* Buttons: silver fill that lights up on hover, or a hairline ghost. */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  height: 48px; padding: 0 1.75rem;
-  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
-  white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  height: 50px; padding: 0 1.9rem;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; white-space: nowrap;
   border: 1px solid var(--fg);
-  transition: background 0.25s var(--ease-out-expo), color 0.25s var(--ease-out-expo), transform 0.15s;
+  transition: background 0.35s var(--ease-out-expo), color 0.35s var(--ease-out-expo), box-shadow 0.45s var(--ease-out-expo), transform 0.15s;
 }
-.btn:active { transform: translateY(1px); }
+.btn:active { transform: translateY(1px) scale(0.99); }
 .btn-solid { background: var(--fg); color: var(--bg); }
-.btn-solid:hover { background: transparent; color: var(--fg); }
-.btn-ghost { background: transparent; color: var(--fg); }
-.btn-ghost:hover { background: var(--fg); color: var(--bg); }
-.btn:disabled { opacity: 0.4; pointer-events: none; }
+.btn-solid:hover { background: transparent; color: var(--fg); box-shadow: 0 0 34px rgba(140, 180, 255, 0.3), inset 0 0 18px rgba(140, 180, 255, 0.12); }
+.btn-ghost { background: rgba(5, 7, 12, 0.35); color: var(--fg); border-color: rgba(232, 236, 242, 0.45); }
+.btn-ghost:hover { border-color: var(--fg); box-shadow: 0 0 34px rgba(140, 180, 255, 0.22), inset 0 0 18px rgba(140, 180, 255, 0.1); }
 
-/* Product tiles: image sits on a slightly darker plate so the silver reads against the page. */
-.plate { background: var(--bg-2); }
-
-.marquee-track {
-  display: flex; width: max-content;
-  animation: marquee 40s linear infinite;
+/* Product plates: a dark glass pane with a soft light behind the piece. */
+.plate {
+  position: relative;
+  background: radial-gradient(ellipse 72% 62% at 50% 44%, var(--glow), transparent 72%), rgba(10, 15, 26, 0.55);
+  box-shadow: inset 0 0 0 1px var(--line);
 }
+.plate::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(ellipse 60% 52% at 50% 46%, rgba(188, 212, 255, 0.24), transparent 70%);
+  transition: opacity 0.7s var(--ease-out-expo);
+}
+.group:hover .plate::before { opacity: 1; }
+
+/* The sky. Three tiled star layers plus a faint blue haze. Fixed, pointer-events none, transform and opacity only. */
+.sky { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.sky-haze {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(1100px 760px at 12% -8%, rgba(70, 110, 190, 0.2), transparent 62%),
+    radial-gradient(900px 680px at 92% 26%, rgba(90, 135, 205, 0.11), transparent 62%),
+    radial-gradient(900px 820px at 48% 112%, rgba(55, 90, 165, 0.16), transparent 62%);
+}
+.sky-stars { position: absolute; inset: -320px 0; background-repeat: repeat; }
+.sky-far  { background-image: url(/stars/far.svg);  opacity: 0.8; }
+.sky-mid  { background-image: url(/stars/mid.svg); }
+.sky-near { background-image: url(/stars/near.svg); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sky-mid  { animation: twinkle 7s ease-in-out infinite alternate; }
+  .sky-near { animation: twinkle 5s ease-in-out -2s infinite alternate; }
+  @supports (animation-timeline: scroll()) {
+    /* Depth: nearer stars travel further as the page scrolls. */
+    .sky-far  { animation: drift-far linear both; animation-timeline: scroll(root); }
+    .sky-mid  { animation: twinkle 7s ease-in-out infinite alternate, drift-mid linear both; animation-timeline: auto, scroll(root); }
+    .sky-near { animation: twinkle 5s ease-in-out -2s infinite alternate, drift-near linear both; animation-timeline: auto, scroll(root); }
+  }
+  .marquee-track { display: flex; width: max-content; animation: marquee 50s linear infinite; }
+}
+/* Content reveal: tied to scroll position, visible by default if unsupported. */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in { animation: fade-in 0.45s var(--ease-out-expo) both; }
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--d, 0) * 120%) entry calc(45% + var(--d, 0) * 120%);
+    }
+  }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes reveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes twinkle { from { opacity: 0.55; } to { opacity: 1; } }
+@keyframes drift-far  { to { transform: translateY(-70px); } }
+@keyframes drift-mid  { to { transform: translateY(-170px); } }
+@keyframes drift-near { to { transform: translateY(-300px); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Animated logo containers. The script only styles containers carrying its own marker attribute,
+   which we leave off so React controls mounting, so the same rules live here. The static image
+   is the no-JS and reduced-motion state. */
+.sphinx-logo { position: relative; display: block; }
+.sphinx-logo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 0.9s ease; }
+.sphinx-logo > canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 0.9s ease; }
+
+.marquee-track { display: flex; width: max-content; }
+.outline-text { color: transparent; -webkit-text-stroke: 0.8px rgba(188, 212, 255, 0.5); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .marquee-track { animation: none; }
-  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }

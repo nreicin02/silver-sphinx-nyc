@@ -5,7 +5,7 @@ import { PRODUCTS, CATEGORIES, getProduct } from "@/lib/products";
 import { smsLink } from "@/lib/contact";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
-import { HeroImage } from "@/components/HeroImage";
+import { SphinxLogo } from "@/components/SphinxLogo";
 
 const CATEGORY_IMAGE: Record<string, string> = {
   bracelets: "/products/byzantine-chain-bracelet-1.webp",
@@ -16,16 +16,16 @@ const CATEGORY_IMAGE: Record<string, string> = {
 
 export default function Home() {
   const featured = PRODUCTS.filter((p) => p.featured).slice(0, 6);
-  const hero = getProduct("lion-head-cuff")!;
   const statement = getProduct("moon-face-pendant")!;
 
   return (
     <>
-      {/* Hero: split. Wordmark and one line on the left, one piece on the right. */}
-      <section className="mx-auto grid max-w-[1400px] items-center gap-8 px-4 pb-16 pt-6 md:min-h-[calc(100dvh-72px)] md:grid-cols-[5fr_7fr] md:gap-12 md:px-8 md:pb-24 md:pt-10">
+      {/* Hero: the full mark is the visual, name and two actions beside it. */}
+      <section className="mx-auto grid max-w-[1400px] items-center gap-8 px-4 pb-16 pt-4 md:min-h-[calc(100dvh-76px)] md:grid-cols-[6fr_5fr] md:gap-6 md:px-8 md:pb-24 md:pt-6">
         <div className="order-2 md:order-1">
-          <h1 className="wordmark text-[56px] leading-[0.92] sm:text-7xl md:text-[64px] lg:text-[88px] xl:text-[104px]">
-            The Silver<br />Sphinx<br />of New York
+          <h1 className="wordmark text-[44px] sm:text-6xl md:text-[46px] lg:text-[76px] xl:text-[92px]">
+            <span className="block">The Silver Sphinx</span>
+            <span className="block">of New York</span>
           </h1>
           <p className="mt-6 max-w-sm text-base text-muted md:text-lg">
             Sterling silver, hand selected in the city. Cuffs, chains, pendants and pins with weight to them.
@@ -35,8 +35,8 @@ export default function Home() {
             <a href={smsLink()} className="btn btn-ghost">Contact</a>
           </div>
         </div>
-        <div className="order-1 md:order-2">
-          <HeroImage src={hero.images[0]} alt={hero.name} />
+        <div className="order-1 md:order-2 md:justify-self-center">
+          <SphinxLogo mode="full" priority className="mx-auto aspect-[13/25] h-[clamp(300px,44dvh,660px)] md:h-[clamp(420px,70dvh,700px)]" />
         </div>
       </section>
 
@@ -44,7 +44,7 @@ export default function Home() {
       <section className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
         <Reveal>
           <div className="flex items-end justify-between gap-6 border-b border-line pb-5">
-            <h2 className="text-3xl font-medium tracking-tight md:text-5xl">Selected pieces</h2>
+            <h2 className="text-3xl display md:text-5xl">Selected pieces</h2>
             <Link href="/shop" className="label link-line hidden sm:inline-flex items-center gap-2">
               All pieces <ArrowRight size={14} />
             </Link>
@@ -85,7 +85,7 @@ export default function Home() {
       {/* Categories: horizontal scroll-snap on mobile, four across on desktop. */}
       <section className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
         <Reveal>
-          <h2 className="text-3xl font-medium tracking-tight md:text-5xl">Shop by type</h2>
+          <h2 className="text-3xl display md:text-5xl">Shop by type</h2>
         </Reveal>
         <div className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-4 md:gap-8 md:overflow-visible md:px-0">
           {CATEGORIES.map((c, i) => (
@@ -110,7 +110,7 @@ export default function Home() {
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex shrink-0">
               {Array.from({ length: 6 }).map((_, i) => (
-                <span key={i} className="wordmark px-8 text-5xl md:text-7xl">The Silver Sphinx of New York</span>
+                <span key={i} className="wordmark outline-text px-8 text-5xl md:text-7xl">The Silver Sphinx of New York</span>
               ))}
             </div>
           ))}
@@ -120,7 +120,7 @@ export default function Home() {
       {/* Closing: contact. */}
       <section className="mx-auto max-w-[1400px] px-4 py-20 md:px-8 md:py-32">
         <Reveal className="max-w-2xl">
-          <h2 className="text-3xl font-medium tracking-tight md:text-5xl">Looking for something you don&apos;t see?</h2>
+          <h2 className="text-3xl display md:text-5xl">Looking for something you don&apos;t see?</h2>
           <p className="mt-4 max-w-md text-base text-muted md:text-lg">New pieces come through every week. Text what you are after and he will keep an eye out.</p>
           <a href={smsLink("Hi, I'm looking for a specific piece.")} className="btn btn-solid mt-8">Contact</a>
         </Reveal>
