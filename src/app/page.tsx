@@ -23,12 +23,9 @@ export default function Home() {
       {/* Hero: the full mark is the visual, name and two actions beside it. */}
       <section className="mx-auto grid max-w-[1400px] items-center gap-8 px-4 pb-16 pt-4 md:min-h-[calc(100dvh-76px)] md:grid-cols-[6fr_5fr] md:gap-6 md:px-8 md:pb-24 md:pt-6">
         <div className="order-2 md:order-1">
-          <h1 className="wordmark text-[44px] sm:text-6xl md:text-[46px] lg:text-[76px] xl:text-[92px]">
-            <span className="block">The Silver Sphinx</span>
-            <span className="block">of New York</span>
-          </h1>
+          <h1 className="wordmark text-[56px] sm:text-7xl md:text-[64px] lg:text-[96px] xl:text-[116px]">Silver Sphinx</h1>
           <p className="mt-6 max-w-sm text-base text-muted md:text-lg">
-            Sterling silver, hand selected in the city. Cuffs, chains, pendants and pins with weight to them.
+            Sterling silver, hand selected in New York. Cuffs, chains, pendants and pins with weight to them.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/shop" className="btn btn-solid">Shop all pieces</Link>
@@ -109,8 +106,8 @@ export default function Home() {
         <div className="marquee-track">
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex shrink-0">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <span key={i} className="wordmark outline-text px-8 text-5xl md:text-7xl">The Silver Sphinx of New York</span>
+              {Array.from({ length: 10 }).map((_, i) => (
+                <span key={i} className="wordmark outline-text px-8 text-5xl md:text-7xl">Silver Sphinx</span>
               ))}
             </div>
           ))}

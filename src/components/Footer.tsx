@@ -24,7 +24,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-line">
-        <p className="label mx-auto max-w-[1400px] px-4 py-4 text-muted md:px-8">&copy; {new Date().getFullYear()} The Silver Sphinx of New York. All rights reserved.</p>
+        <p className="label mx-auto max-w-[1400px] px-4 py-4 text-muted md:px-8">&copy; {new Date().getFullYear()} Silver Sphinx. All rights reserved.</p>
       </div>
     </footer>
   );

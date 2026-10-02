@@ -1,4 +1,4 @@
-// Product catalog for The Silver Sphinx of New York.
+// Product catalog for Silver Sphinx.
 // No prices on the site: every piece is negotiated over text or a call.
 // `images` are paths under /public/products, generated from the cleaned photos.
 

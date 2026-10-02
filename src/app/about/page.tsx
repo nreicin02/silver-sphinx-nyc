@@ -12,7 +12,7 @@ export default function AboutPage() {
         <div>
           <h1 className="wordmark max-w-3xl text-6xl leading-[0.95] md:text-8xl">Silver, chosen by hand in New York.</h1>
           <p className="mt-8 max-w-xl text-lg text-muted md:text-xl">
-            The Silver Sphinx of New York is one person with a good eye and a strong opinion. Every piece here was hand picked and chosen carefully before it earned a spot in the collection.
+            Silver Sphinx is one person with a good eye and a strong opinion. Every piece here was hand picked and chosen carefully before it earned a spot in the collection.
           </p>
         </div>
         <SphinxLogo mode="full" className="mx-auto aspect-[13/25] h-[clamp(300px,50dvh,560px)] md:justify-self-center" />
