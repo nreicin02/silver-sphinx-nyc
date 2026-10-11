@@ -13,7 +13,6 @@ export type Product = {
   details: string[];
   // Shown as its own "Weight" line on the product page (bullion sells by weight).
   weight?: string;
-  featured?: boolean;
 };
 
 export const CATEGORIES: { key: Category; label: string }[] = [
@@ -33,7 +32,6 @@ export const PRODUCTS: Product[] = [
     images: ["/products/lion-head-cuff-1.webp"],
     short: "Open cuff with two cast lion heads at the terminals.",
     details: ["Sterling silver", "Open torque, slides on from the side", "Cast lion heads with ribbed collars", "Stamped sterling"],
-    featured: true,
   },
   {
     slug: "moon-face-pendant",
@@ -42,7 +40,6 @@ export const PRODUCTS: Product[] = [
     images: ["/products/moon-face-pendant-1.webp", "/products/moon-face-pendant-2.webp"],
     short: "Carved bone face set in silver scrollwork with mixed stones.",
     details: ["Sterling silver", "Carved bone face", "Peridot, iolite, garnet, moonstone and amethyst", "Fixed bail"],
-    featured: true,
   },
   {
     slug: "byzantine-chain-bracelet",
@@ -51,7 +48,6 @@ export const PRODUCTS: Product[] = [
     images: ["/products/byzantine-chain-bracelet-1.webp", "/products/byzantine-chain-bracelet-2.webp"],
     short: "Heavy Byzantine weave with decorated end caps and a hook clasp.",
     details: ["Sterling silver", "Byzantine link", "Hook and ring closure", "Approx. 74 g"],
-    featured: true,
   },
   {
     slug: "art-nouveau-profile-brooch",
@@ -60,7 +56,6 @@ export const PRODUCTS: Product[] = [
     images: ["/products/art-nouveau-profile-brooch-1.webp", "/products/art-nouveau-profile-brooch-2.webp"],
     short: "Woman in profile with flowing hair, cast in the Art Nouveau manner.",
     details: ["Sterling silver", "Approx. 3 in. tall", "Pin stem with safety catch", "Stamped on the reverse"],
-    featured: true,
   },
   {
     slug: "silver-bead-bracelet",
@@ -77,7 +72,6 @@ export const PRODUCTS: Product[] = [
     images: ["/products/red-enamel-buckle-ring-1.webp"],
     short: "Belt buckle band with a red guilloché enamel panel and marcasite edge.",
     details: ["Sterling silver", "Red guilloché enamel", "Marcasite border", "Sizing available on request"],
-    featured: true,
   },
   {
     slug: "harp-link-bracelet",
@@ -94,7 +88,6 @@ export const PRODUCTS: Product[] = [
     images: ["/products/turquoise-drop-pendant-1.webp"],
     short: "Two natural turquoise cabochons in a stacked silver bezel.",
     details: ["Sterling silver", "Two turquoise cabochons", "Hinged bail"],
-    featured: true,
   },
   {
     slug: "peacock-charm",
@@ -128,7 +121,6 @@ export const PRODUCTS: Product[] = [
     short: "A 1992 Mexican Libertad in .999 fine silver. Winged Victory over the volcanoes on the front, the Mexican eagle on the back. Toned with age.",
     details: [".999 fine silver", "Mexican Libertad, dated 1992", "Mexico City Mint (Mo mark)", "Natural toning", "Pendant bezel with bail"],
     weight: "1 troy oz (31.1 g)",
-    featured: true,
   },
   {
     slug: "mexican-libertad-2003-1oz",
@@ -165,7 +157,6 @@ export const PRODUCTS: Product[] = [
     short: "Rare Mexican 925 sterling silver fish pendant with an articulated body that moves scale by scale.",
     details: ["925 sterling silver", "Made in Mexico", "Articulated body", "Stamped Mexico 925"],
     weight: "31 g",
-    featured: true,
   },
   {
     slug: "vintage-anchor-link-chain",
@@ -215,3 +206,13 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const getProduct = (slug: string) => PRODUCTS.find((p) => p.slug === slug);
+
+// "Selected pieces" on the home page, in display order.
+export const FEATURED = [
+  "mexican-articulated-fish-pendant",
+  "mexican-libertad-1992-1oz",
+  "vintage-angel-link-bracelet",
+  "canadian-maple-leaf-2022-1oz",
+  "vintage-italian-cuban-chain",
+  "vintage-italian-figaro-bracelet",
+];

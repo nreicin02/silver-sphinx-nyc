@@ -14,7 +14,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           fill
           priority={priority}
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-          className={`object-cover transition-all duration-700 [transition-timing-function:var(--ease-out-expo)] group-hover:scale-[1.04] ${b ? "group-hover:opacity-0" : ""}`}
+          className={`object-contain p-[5%] transition-all duration-700 [transition-timing-function:var(--ease-out-expo)] group-hover:scale-[1.04] ${b ? "group-hover:opacity-0" : ""}`}
         />
         {b && (
           <Image
@@ -22,7 +22,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             alt=""
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover opacity-0 transition-all duration-700 [transition-timing-function:var(--ease-out-expo)] group-hover:scale-[1.04] group-hover:opacity-100"
+            className="object-contain p-[5%] opacity-0 transition-all duration-700 [transition-timing-function:var(--ease-out-expo)] group-hover:scale-[1.04] group-hover:opacity-100"
           />
         )}
       </div>

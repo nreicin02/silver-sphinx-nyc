@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { PRODUCTS, CATEGORIES } from "@/lib/products";
+import { CATEGORIES, FEATURED, getProduct } from "@/lib/products";
 import { smsLink } from "@/lib/contact";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
@@ -17,7 +17,7 @@ const CATEGORY_IMAGE: Record<string, string> = {
 };
 
 export default function Home() {
-  const featured = PRODUCTS.filter((p) => p.featured).slice(0, 6);
+  const featured = FEATURED.map((slug) => getProduct(slug)!);
 
   // Tells Google the site's name for search results (https://developers.google.com/search/docs/appearance/site-names).
   const siteJsonLd = { "@context": "https://schema.org", "@type": "WebSite", name: "Silver Sphinx", url: "https://www.silversphinxnyc.com/" };
@@ -94,7 +94,7 @@ export default function Home() {
             <Reveal key={c.key} delay={i * 0.06} className="w-[72vw] shrink-0 snap-start sm:w-[44vw] md:w-auto">
               <Link href={`/shop?c=${c.key}`} className="group block">
                 <div className="plate relative aspect-[4/5] overflow-hidden">
-                  <Image src={CATEGORY_IMAGE[c.key]} alt={c.label} fill sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 72vw" className="object-cover transition-transform duration-700 [transition-timing-function:var(--ease-out-expo)] group-hover:scale-[1.05]" />
+                  <Image src={CATEGORY_IMAGE[c.key]} alt={c.label} fill sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 72vw" className="object-contain p-[8%] transition-transform duration-700 [transition-timing-function:var(--ease-out-expo)] group-hover:scale-[1.05]" />
                 </div>
                 <p className="label mt-3 flex items-center justify-between">
                   {c.label}
