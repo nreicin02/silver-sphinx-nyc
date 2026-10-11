@@ -9,6 +9,7 @@ import { SphinxLogo } from "@/components/SphinxLogo";
 
 const CATEGORY_IMAGE: Record<string, string> = {
   bracelets: "/products/byzantine-chain-bracelet-1.webp",
+  chains: "/products/anchor-link-chain-1.webp",
   pendants: "/products/turquoise-drop-pendant-1.webp",
   rings: "/products/red-enamel-buckle-ring-1.webp",
   brooches: "/products/art-nouveau-profile-brooch-1.webp",
@@ -79,17 +80,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories: horizontal scroll-snap on mobile, five across on desktop. */}
+      {/* Categories: horizontal scroll-snap on mobile, six across on desktop. */}
       <section className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
         <Reveal>
           <h2 className="text-3xl display md:text-5xl">Shop by type</h2>
         </Reveal>
-        <div className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-5 md:gap-8 md:overflow-visible md:px-0">
+        <div className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 lg:grid-cols-6 md:gap-8 md:overflow-visible md:px-0">
           {CATEGORIES.map((c, i) => (
             <Reveal key={c.key} delay={i * 0.06} className="w-[72vw] shrink-0 snap-start sm:w-[44vw] md:w-auto">
               <Link href={`/shop?c=${c.key}`} className="group block">
                 <div className="plate relative aspect-[4/5] overflow-hidden">
-                  <Image src={CATEGORY_IMAGE[c.key]} alt={c.label} fill sizes="(min-width: 768px) 20vw, 72vw" className="object-cover transition-transform duration-700 [transition-timing-function:var(--ease-out-expo)] group-hover:scale-[1.05]" />
+                  <Image src={CATEGORY_IMAGE[c.key]} alt={c.label} fill sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 72vw" className="object-cover transition-transform duration-700 [transition-timing-function:var(--ease-out-expo)] group-hover:scale-[1.05]" />
                 </div>
                 <p className="label mt-3 flex items-center justify-between">
                   {c.label}

@@ -2,7 +2,7 @@
 // No prices on the site: every piece is negotiated over text or a call.
 // `images` are paths under /public/products, generated from the cleaned photos.
 
-export type Category = "bracelets" | "pendants" | "rings" | "brooches" | "bullion";
+export type Category = "bracelets" | "chains" | "pendants" | "rings" | "brooches" | "bullion";
 
 export type Product = {
   slug: string;
@@ -18,6 +18,7 @@ export type Product = {
 
 export const CATEGORIES: { key: Category; label: string }[] = [
   { key: "bracelets", label: "Bracelets" },
+  { key: "chains", label: "Chains" },
   { key: "pendants", label: "Pendants" },
   { key: "rings", label: "Rings" },
   { key: "brooches", label: "Brooches" },
@@ -137,6 +138,43 @@ export const PRODUCTS: Product[] = [
     short: "A 2003 Mexican Libertad in .999 fine silver. Victory atop the Angel of Independence column on the front, ringed by historic eagle seals on the back.",
     details: [".999 fine silver", "Mexican Libertad, dated 2003", "Mexico City Mint (Mo mark)"],
     weight: "1 troy oz (31.1 g)",
+  },
+  {
+    slug: "vintage-italian-figaro-bracelet",
+    name: "Vintage Italian Figaro Bracelet",
+    category: "bracelets",
+    images: ["/products/figaro-bracelet-1.webp", "/products/figaro-bracelet-2.webp"],
+    short: "Vintage Italian figaro bracelet in 925 sterling silver, with long links alternating with anchor links.",
+    details: ["925 sterling silver", "Made in Italy", "Length: 7.25 in", "Width: 9 mm", "Lobster clasp"],
+    weight: "25.1 g",
+  },
+  {
+    slug: "vintage-angel-link-bracelet",
+    name: "Vintage Angel Link Bracelet",
+    category: "bracelets",
+    images: ["/products/angel-link-bracelet-1.webp", "/products/angel-link-bracelet-2.webp"],
+    short: "Vintage 925 sterling silver bracelet with angel links.",
+    details: ["925 sterling silver", "Length: 7 in", "Width: 6 mm", "Lobster clasp"],
+    weight: "8.4 g",
+  },
+  {
+    slug: "mexican-articulated-fish-pendant",
+    name: "Rare Mexican Articulated Fish Pendant",
+    category: "pendants",
+    images: ["/products/fish-pendant-1.webp", "/products/fish-pendant-2.webp", "/products/fish-pendant-3.webp"],
+    short: "Rare Mexican 925 sterling silver fish pendant with an articulated body that moves scale by scale.",
+    details: ["925 sterling silver", "Made in Mexico", "Articulated body", "Stamped Mexico 925"],
+    weight: "31 g",
+    featured: true,
+  },
+  {
+    slug: "vintage-anchor-link-chain",
+    name: "Vintage Anchor Link Chain",
+    category: "chains",
+    images: ["/products/anchor-link-chain-1.webp", "/products/anchor-link-chain-2.webp", "/products/anchor-link-chain-3.webp"],
+    short: "Vintage anchor link chain in 925 sterling silver, stamped 925 Italy at the clasp.",
+    details: ["925 sterling silver", "Made in Italy", "Length: 30 in", "Width: 10 mm", "Lobster clasp"],
+    weight: "81.9 g",
   },
 ];
 
