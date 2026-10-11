@@ -61,7 +61,7 @@ export default function Home() {
       <section className="border-y border-line">
         <div className="mx-auto grid max-w-[1400px] md:grid-cols-12">
           <div className="plate relative aspect-[4/5] md:col-span-7 md:aspect-auto md:min-h-[640px]">
-            <Image src="/images/collection-coins-beads.webp" alt="Silver Libertad coins and a bead bracelet on a paisley cloth" fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
+            <Image src="/images/collection-coins-beads-v2.webp" alt="Silver Libertad coins and a bead bracelet on a paisley cloth" fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
           </div>
           <div className="flex flex-col justify-between gap-10 px-4 py-12 md:col-span-5 md:px-12 md:py-20">
             <Reveal>

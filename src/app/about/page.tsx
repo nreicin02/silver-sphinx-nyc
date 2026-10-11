@@ -33,14 +33,11 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      <section className="border-t border-line">
-        <div className="relative mx-auto aspect-[4/5] max-w-[1400px] md:aspect-[21/9]">
-          <Image src="/images/collection-chains.webp" alt="Silver chains and a bead bracelet on a paisley cloth" fill sizes="(min-width: 1400px) 1400px, 100vw" className="object-cover" />
+      <section className="mx-auto grid max-w-[1400px] items-center gap-10 border-t border-line px-4 py-16 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
+        <div className="relative aspect-[4/5] overflow-hidden md:col-span-5">
+          <Image src="/images/collection-chains-v2.webp" alt="Silver chains and a bead bracelet on a paisley cloth" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
         </div>
-      </section>
-
-      <section className="mx-auto max-w-[1400px] border-t border-line px-4 py-16 md:px-8 md:py-24">
-        <Reveal>
+        <Reveal className="md:col-span-6 md:col-start-7">
           <h2 className="display text-3xl md:text-5xl">Knowledge behind the metal</h2>
           <p className="mt-6 max-w-xl text-lg text-muted md:text-xl">
             Beyond the collection itself, I believe in educating customers about jewelry and precious metals, sharing the knowledge behind their purity, craftsmanship, and value. My goal is to help customers make informed decisions while developing a deeper appreciation for the pieces they own.
