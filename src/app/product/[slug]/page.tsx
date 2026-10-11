@@ -39,6 +39,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <ul className="mt-10 grid gap-2 border-t border-line pt-6">
             {p.details.map((d) => <li key={d} className="text-sm">{d}</li>)}
           </ul>
+          {p.weight && (
+            <div className="mt-6 border-t border-line pt-6">
+              <p className="label text-muted">Weight</p>
+              <p className="mt-2 text-sm">{p.weight}</p>
+            </div>
+          )}
           <p className="mt-8 text-sm text-muted">Text {PHONE_DISPLAY} to ask about this piece.</p>
         </div>
       </section>

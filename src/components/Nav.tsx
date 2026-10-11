@@ -8,6 +8,7 @@ import { SphinxLogo } from "./SphinxLogo";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/shop", label: "Shop" },
+  { href: "/sell", label: "Sell" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

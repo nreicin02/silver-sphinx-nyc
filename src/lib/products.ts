@@ -2,7 +2,7 @@
 // No prices on the site: every piece is negotiated over text or a call.
 // `images` are paths under /public/products, generated from the cleaned photos.
 
-export type Category = "bracelets" | "pendants" | "rings" | "brooches";
+export type Category = "bracelets" | "pendants" | "rings" | "brooches" | "bullion";
 
 export type Product = {
   slug: string;
@@ -11,6 +11,8 @@ export type Product = {
   images: string[];
   short: string;
   details: string[];
+  // Shown as its own "Weight" line on the product page (bullion sells by weight).
+  weight?: string;
   featured?: boolean;
 };
 
@@ -19,6 +21,7 @@ export const CATEGORIES: { key: Category; label: string }[] = [
   { key: "pendants", label: "Pendants" },
   { key: "rings", label: "Rings" },
   { key: "brooches", label: "Brooches" },
+  { key: "bullion", label: "Bullion" },
 ];
 
 export const PRODUCTS: Product[] = [
@@ -123,6 +126,25 @@ export const PRODUCTS: Product[] = [
     images: ["/products/grape-cluster-brooch-1.webp"],
     short: "Bunch of grapes with vine leaves. Also wears as a pendant.",
     details: ["Sterling silver", "Approx. 1.5 in.", "Pin stem and pendant loop"],
+  },
+  {
+    slug: "mexican-libertad-1992-1oz",
+    name: "1992 Mexican Libertad, 1 oz",
+    category: "bullion",
+    images: ["/products/libertad-1992-1oz-1.webp", "/products/libertad-1992-1oz-2.webp"],
+    short: "A 1992 Mexican Libertad in .999 fine silver. Winged Victory over the volcanoes on the front, the Mexican eagle on the back. Toned with age.",
+    details: [".999 fine silver", "Mexican Libertad, dated 1992", "Mexico City Mint (Mo mark)", "Natural toning"],
+    weight: "1 troy oz (31.1 g)",
+    featured: true,
+  },
+  {
+    slug: "mexican-libertad-2003-1oz",
+    name: "2003 Mexican Libertad, 1 oz",
+    category: "bullion",
+    images: ["/products/libertad-2003-1oz-1.webp", "/products/libertad-2003-1oz-2.webp"],
+    short: "A 2003 Mexican Libertad in .999 fine silver. Victory atop the Angel of Independence column on the front, ringed by historic eagle seals on the back.",
+    details: [".999 fine silver", "Mexican Libertad, dated 2003", "Mexico City Mint (Mo mark)"],
+    weight: "1 troy oz (31.1 g)",
   },
 ];
 

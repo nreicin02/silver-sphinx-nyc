@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   title: { default: "Silver Sphinx", template: "%s | Silver Sphinx" },
-  description: "Sterling silver jewelry, hand selected in New York. Cuffs, chains, pendants, rings and brooches. Text to ask about any piece.",
+  description: "Sterling silver jewelry, hand selected in New York. Cuffs, chains, pendants, rings, brooches and silver bullion. Text to ask about any piece.",
   applicationName: "Silver Sphinx",
   openGraph: { siteName: "Silver Sphinx", title: "Silver Sphinx", description: "Sterling silver jewelry, hand selected in New York.", type: "website" },
 };

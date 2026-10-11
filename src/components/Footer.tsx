@@ -12,6 +12,7 @@ export function Footer() {
         </div>
         <nav className="grid grid-cols-2 gap-x-12 gap-y-3 md:justify-self-center" aria-label="Footer">
           <Link href="/shop" className="label link-line w-fit">Shop</Link>
+          <Link href="/sell" className="label link-line w-fit">Sell</Link>
           <Link href="/about" className="label link-line w-fit">About</Link>
           <Link href="/contact" className="label link-line w-fit">Contact</Link>
           <a href={TEL} className="label link-line w-fit">Call</a>
