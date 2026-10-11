@@ -34,8 +34,8 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto grid max-w-[1400px] items-center gap-10 border-t border-line px-4 py-16 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
-        <div className="relative aspect-[4/5] overflow-hidden md:col-span-5">
-          <Image src="/images/collection-chains-v2.webp" alt="Silver chains and a bead bracelet on a paisley cloth" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
+        <div className="plate relative aspect-[4/5] overflow-hidden md:col-span-5">
+          <Image src="/images/collection-chains-v3.webp" alt="Silver rope, figaro and bead chains" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-contain p-6" />
         </div>
         <Reveal className="md:col-span-6 md:col-start-7">
           <h2 className="display text-3xl md:text-5xl">Knowledge behind the metal</h2>
