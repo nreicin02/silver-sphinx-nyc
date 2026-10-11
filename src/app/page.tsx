@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { PRODUCTS, CATEGORIES, getProduct } from "@/lib/products";
+import { PRODUCTS, CATEGORIES } from "@/lib/products";
 import { smsLink } from "@/lib/contact";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
@@ -17,7 +17,6 @@ const CATEGORY_IMAGE: Record<string, string> = {
 
 export default function Home() {
   const featured = PRODUCTS.filter((p) => p.featured).slice(0, 6);
-  const statement = getProduct("moon-face-pendant")!;
 
   return (
     <>
@@ -26,7 +25,7 @@ export default function Home() {
         <div className="order-2 md:order-1">
           <h1 className="wordmark text-[56px] sm:text-7xl md:text-[64px] lg:text-[96px] xl:text-[116px]">Silver Sphinx</h1>
           <p className="mt-6 max-w-sm text-base text-muted md:text-lg">
-            Sterling silver, hand selected in New York. Cuffs, chains, pendants and pins with weight to them.
+            Fine silver, hand selected in New York.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/shop" className="btn btn-solid">Shop all pieces</Link>
@@ -62,7 +61,7 @@ export default function Home() {
       <section className="border-y border-line">
         <div className="mx-auto grid max-w-[1400px] md:grid-cols-12">
           <div className="plate relative aspect-[4/5] md:col-span-7 md:aspect-auto md:min-h-[640px]">
-            <Image src={statement.images[1]} alt={statement.name} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
+            <Image src="/images/collection-coins-beads.webp" alt="Silver Libertad coins and a bead bracelet on a paisley cloth" fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
           </div>
           <div className="flex flex-col justify-between gap-10 px-4 py-12 md:col-span-5 md:px-12 md:py-20">
             <Reveal>
@@ -70,7 +69,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="max-w-sm text-base text-muted md:text-lg">
-                Every piece is sterling checked by hand before it goes out. Ask the Sphinx for this piece&apos;s story.
+                Each piece has a story. Feel the weight and quality.
               </p>
               <Link href="/about" className="label link-line mt-6 inline-flex items-center gap-2">
                 About the house <ArrowRight size={14} />

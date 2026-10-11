@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-[1400px] gap-10 px-4 py-12 md:grid-cols-[1fr_auto_1fr] md:items-end md:px-8">
         <div>
           <p className="wordmark text-4xl">Silver Sphinx</p>
-          <p className="mt-3 max-w-xs text-sm text-muted">Sterling silver, hand selected in New York.</p>
+          <p className="mt-3 max-w-xs text-sm text-muted">Fine silver, hand selected in New York.</p>
         </div>
         <nav className="grid grid-cols-2 gap-x-12 gap-y-3 md:justify-self-center" aria-label="Footer">
           <Link href="/shop" className="label link-line w-fit">Shop</Link>

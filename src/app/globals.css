@@ -117,6 +117,12 @@ select.field option { background: var(--bg-2); }
 .sky-far  { background-image: url(/stars/far.svg);  opacity: 0.8; }
 .sky-mid  { background-image: url(/stars/mid.svg); }
 .sky-near { background-image: url(/stars/near.svg); }
+/* Metal shards: slivers of silver drifting upward among the stars. Each layer is one tile taller than
+   the screen so the float loop (exactly one tile) is seamless. */
+.shard-scroll { position: absolute; inset: 0; }
+.shards { position: absolute; left: 0; right: 0; top: -320px; background-repeat: repeat; will-change: transform; }
+.shards-dust  { bottom: -1420px; background-image: url(/stars/shards.svg); }
+.shards-glint { bottom: -1620px; background-image: url(/stars/shards-glint.svg); }
 
 @media (prefers-reduced-motion: no-preference) {
   .sky-mid  { animation: twinkle 7s ease-in-out infinite alternate; }
@@ -128,6 +134,12 @@ select.field option { background: var(--bg-2); }
     .sky-near { animation: twinkle 5s ease-in-out -2s infinite alternate, drift-near linear both; animation-timeline: auto, scroll(root); }
   }
   .marquee-track { display: flex; width: max-content; animation: marquee 50s linear infinite; }
+  .shards-dust  { animation: float-dust 220s linear infinite; }
+  .shards-glint { animation: float-glint 160s linear infinite, glint 3.2s ease-in-out infinite alternate; }
+  @supports (animation-timeline: scroll()) {
+    .shard-scroll      { animation: drift-mid linear both; animation-timeline: scroll(root); }
+    .shard-scroll-near { animation-name: drift-near; }
+  }
 }
 /* Content reveal: tied to scroll position, visible by default if unsupported. */
 @media (prefers-reduced-motion: no-preference) {
@@ -147,6 +159,9 @@ select.field option { background: var(--bg-2); }
 @keyframes drift-mid  { to { transform: translateY(-170px); } }
 @keyframes drift-near { to { transform: translateY(-300px); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes float-dust  { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -1100px, 0); } }
+@keyframes float-glint { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -1300px, 0); } }
+@keyframes glint { from { opacity: 0.35; } to { opacity: 1; } }
 
 /* Animated logo containers. The script only styles containers carrying its own marker attribute,
    which we leave off so React controls mounting, so the same rules live here. The static image
