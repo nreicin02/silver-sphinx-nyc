@@ -17,8 +17,8 @@ export type Product = {
 };
 
 export const CATEGORIES: { key: Category; label: string }[] = [
-  { key: "bracelets", label: "Bracelets" },
   { key: "chains", label: "Chains" },
+  { key: "bracelets", label: "Bracelets" },
   { key: "pendants", label: "Pendants" },
   { key: "rings", label: "Rings" },
   { key: "brooches", label: "Brooches" },

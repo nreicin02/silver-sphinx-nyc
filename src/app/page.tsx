@@ -19,8 +19,12 @@ const CATEGORY_IMAGE: Record<string, string> = {
 export default function Home() {
   const featured = PRODUCTS.filter((p) => p.featured).slice(0, 6);
 
+  // Tells Google the site's name for search results (https://developers.google.com/search/docs/appearance/site-names).
+  const siteJsonLd = { "@context": "https://schema.org", "@type": "WebSite", name: "Silver Sphinx", url: "https://www.silversphinxnyc.com/" };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
       {/* Hero: the full mark is the visual, name and two actions beside it. */}
       <section className="mx-auto grid max-w-[1400px] items-center gap-8 px-4 pb-16 pt-4 md:min-h-[calc(100dvh-76px)] md:grid-cols-[6fr_5fr] md:gap-6 md:px-8 md:pb-24 md:pt-6">
         <div className="order-2 md:order-1">
