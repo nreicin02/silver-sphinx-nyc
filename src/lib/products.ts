@@ -176,6 +176,42 @@ export const PRODUCTS: Product[] = [
     details: ["925 sterling silver", "Made in Italy", "Length: 30 in", "Width: 10 mm", "Lobster clasp"],
     weight: "81.9 g",
   },
+  {
+    slug: "canadian-maple-leaf-2018-1oz",
+    name: "2018 Canadian Maple Leaf, 1 oz",
+    category: "bullion",
+    images: ["/products/maple-leaf-2018-1.webp", "/products/maple-leaf-2018-2.webp"],
+    short: "A 2018 Royal Canadian Mint Silver Maple Leaf in .9999 fine silver. Queen Elizabeth II on the front, the maple leaf on the back.",
+    details: [".9999 fine silver", "Canadian Silver Maple Leaf, dated 2018", "Royal Canadian Mint", "5 dollars face value"],
+    weight: "1 troy oz (31.1 g)",
+  },
+  {
+    slug: "canadian-maple-leaf-2021-1oz",
+    name: "2021 Canadian Maple Leaf, 1 oz",
+    category: "bullion",
+    images: ["/products/maple-leaf-2021-1.webp", "/products/maple-leaf-2021-2.webp"],
+    short: "A 2021 Royal Canadian Mint Silver Maple Leaf in .9999 fine silver. Queen Elizabeth II on the front, the maple leaf on the back.",
+    details: [".9999 fine silver", "Canadian Silver Maple Leaf, dated 2021", "Royal Canadian Mint", "5 dollars face value"],
+    weight: "1 troy oz (31.1 g)",
+  },
+  {
+    slug: "canadian-maple-leaf-2022-1oz",
+    name: "2022 Canadian Maple Leaf, 1 oz",
+    category: "bullion",
+    images: ["/products/maple-leaf-2022-1.webp", "/products/maple-leaf-2022-2.webp"],
+    short: "A 2022 Royal Canadian Mint Silver Maple Leaf in .9999 fine silver. Queen Elizabeth II on the front, the maple leaf on the back.",
+    details: [".9999 fine silver", "Canadian Silver Maple Leaf, dated 2022", "Royal Canadian Mint", "5 dollars face value"],
+    weight: "1 troy oz (31.1 g)",
+  },
+  {
+    slug: "vintage-italian-cuban-chain",
+    name: "Vintage Italian Cuban Chain",
+    category: "chains",
+    images: ["/products/cuban-chain-1.webp", "/products/cuban-chain-2.webp", "/products/cuban-chain-3.webp"],
+    short: "Vintage Italian Cuban chain in 925 sterling silver, stamped Italy at the clasp.",
+    details: ["925 sterling silver", "Made in Italy", "Length: 22 in", "Lobster clasp"],
+    weight: "80 g",
+  },
 ];
 
 export const getProduct = (slug: string) => PRODUCTS.find((p) => p.slug === slug);

@@ -24,15 +24,6 @@ export default function AboutPage() {
         <SphinxLogo mode="full" className="mx-auto aspect-[13/25] h-[clamp(300px,50dvh,560px)] md:justify-self-center" />
       </section>
 
-      <section className="mx-auto max-w-[1400px] border-t border-line px-4 py-16 md:px-8 md:py-24">
-        <Reveal>
-          <h2 className="display text-3xl md:text-5xl">The Sphinx&apos;s Beginning</h2>
-          <p className="mt-6 max-w-xl text-lg text-muted md:text-xl">
-            Close to ten years on 47th Street. He started in the Diamond District doing the work nobody sees, sorting, grading, running stones between benches, and stayed long enough to learn how the whole block works. Today he buys, sells and makes custom pieces from the same street. If you want to know what something is really worth, or what it would take to make it, ask him.
-          </p>
-        </Reveal>
-      </section>
-
       <section className="mx-auto grid max-w-[1400px] items-center gap-10 border-t border-line px-4 py-16 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
         <div className="plate relative aspect-[4/5] overflow-hidden md:col-span-5">
           <Image src="/images/collection-chains-v3.webp" alt="Silver rope, figaro and bead chains" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-contain p-6" />
