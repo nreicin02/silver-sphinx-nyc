@@ -90,11 +90,11 @@ export const PRODUCTS: Product[] = [
     details: ["Sterling silver", "Two turquoise cabochons", "Hinged bail"],
   },
   {
-    slug: "peacock-charm",
-    name: "Peacock Charm",
+    slug: "grapevine-pendant",
+    name: "Grapevine Pendant",
     category: "pendants",
-    images: ["/products/peacock-charm-1.webp"],
-    short: "Small cast peacock with a fanned tail.",
+    images: ["/products/grapevine-pendant-1.webp"],
+    short: "A hand holding a grapevine, with leaves and grape clusters below.",
     details: ["Sterling silver", "Jump ring bail"],
   },
   {

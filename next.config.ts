@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       { source: "/product/libertad-coin-pendant", destination: "/product/mexican-libertad-1992-1oz", permanent: true },
       { source: "/product/link-bracelet-buckle-clasp", destination: "/product/harp-link-bracelet", permanent: true },
       { source: "/product/rolo-chain-bracelet", destination: "/product/harp-link-bracelet", permanent: true },
+      { source: "/product/peacock-charm", destination: "/product/grapevine-pendant", permanent: true },
     ];
   },
 };
