@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Starfield } from "@/components/Starfield";
+import { Analytics } from "@vercel/analytics/next";
 
 const jost = Jost({ subsets: ["latin"], variable: "--font-jost", weight: ["300", "400", "500"], display: "swap" });
 const pirata = Pirata_One({ subsets: ["latin"], variable: "--font-pirata", weight: "400", display: "swap" });
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
